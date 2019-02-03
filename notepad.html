@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="npstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <textarea>
+
+            </textarea>
+        </div>
+        <div class="buttons">
+        <button class="button">Save</button>
+        <button class="button">Clear</button>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var button = document.querySelector('button');
+                var textarea = document.querySelector('textarea');
+                var button2 = document.querySelector('.button2');
+                button.onclick = function () {
+                    localStorage.setItem('notepad', textarea.value);
+                };
+                button2.onclick = function () {
+                    localStorage.removeItem('notepad');
+                    textarea.value = "";
+                };
+                var notepad = localStorage.getItem('notepad');
+                if (notepad !== null) {
+                    textarea.value = notepad;
+                }
+
+
+            });
+        </script>
+    </div>
+</body>
+
+</html>
