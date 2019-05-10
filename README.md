@@ -1,2 +1,2 @@
 # notepad
-A simple JS notepad with usage of local storage 
+A simple JS notepad with the usage of local storage 
